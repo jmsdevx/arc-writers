@@ -1,22 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Head from "../components/head";
-import Nav from "../components/nav";
+import Layout from "../components/layout";
 
 const Home = () => (
-  <div>
-    <Head
-      title="Arc Writer's Tool"
-      description="Create engaging narratives using the 12
-     Jungian Personality Archetypes.  API is located at arcapi.org."
-    />
-    <Nav />
-
+  <Layout>
     <div className="hero">
       <h1 className="title">Arc Writer's Tool</h1>
       <p className="description">
         Create engaging narratives using the 12 Jungian Personality Archetypes.
-        API located at arcapi.org.
       </p>
 
       <div className="row">
@@ -29,7 +20,7 @@ const Home = () => (
         <Link href="/info">
           <a className="card">
             <h3>All The Types</h3>
-            <p>Get information about the types.</p>
+            <p>Get information about archetypes.</p>
           </a>
         </Link>
         <Link href="/tool">
@@ -44,50 +35,46 @@ const Home = () => (
     <style jsx>{`
       .hero {
         width: 100%;
-        color: #333;
+        color: #067df7;
+        text-align: center;
       }
       .title {
         margin: 0;
         width: 100%;
-        padding-top: 80px;
+        padding-top: 4rem;
         line-height: 1.15;
-        font-size: 48px;
+        font-size: 4rem;
       }
-      .title,
+
       .description {
-        text-align: center;
+        font-size: 1.3rem;
       }
       .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
+        max-width: 80rem;
+        margin: 5rem auto 2.5rem;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
       }
       .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
+        padding: 0.4rem;
+        width: 20rem;
+        text-align: center;
         text-decoration: none;
-        color: #434343;
+        font-size: 1rem;
+
         border: 1px solid #9b9b9b;
+        border-radius: 9999rem;
+        color: #067df7;
       }
       .card:hover {
         border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
+        background: #067df7;
+        color: white;
+        opacity: 0.8;
       }
     `}</style>
-  </div>
+  </Layout>
 );
 
 export default Home;

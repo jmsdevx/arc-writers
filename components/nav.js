@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { withRouter } from "next/router";
 
 const links = [
   { href: "http://arcapi.org", label: "API" },
@@ -9,13 +10,10 @@ const links = [
   return link;
 });
 
-const Nav = () => (
+const Nav = props => (
   <nav>
     <ul>
       <li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
         <Link href="/quiz">
           <a>Quiz</a>
         </Link>
@@ -25,6 +23,9 @@ const Nav = () => (
         <Link href="/tool">
           <a>Tool</a>
         </Link>
+      </li>
+      <li>
+        {props.router.pathname === "/" ? null : <h2>Arc Writer's Tool</h2>}
       </li>
       <ul>
         {links.map(({ key, href, label }) => (
@@ -48,7 +49,7 @@ const Nav = () => (
       }
       ul {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
       }
       nav > ul {
         padding: 1rem;
@@ -67,4 +68,4 @@ const Nav = () => (
   </nav>
 );
 
-export default Nav;
+export default withRouter(Nav);

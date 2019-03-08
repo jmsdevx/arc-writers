@@ -1,3 +1,9 @@
-const Quiz = () => <h1>Quiz</h1>;
+import Layout from "../components/layout";
 
-export default Quiz
+const Quiz = () => (
+  <Layout>
+    <h1>Quiz</h1>
+  </Layout>
+);
+
+export default Quiz;
