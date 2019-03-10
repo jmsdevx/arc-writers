@@ -25,7 +25,11 @@ const Nav = props => (
         </Link>
       </li>
       <li>
-        {props.router.pathname === "/" ? null : <h2>Arc Writer's Tool</h2>}
+        {props.router.pathname === "/" ? null : (
+          <Link href="/">
+            <a className="title">Arc Writer's Tool</a>
+          </Link>
+        )}
       </li>
       <ul>
         {links.map(({ key, href, label }) => (
@@ -63,6 +67,9 @@ const Nav = props => (
         text-decoration: none;
         font-size: 1rem;
         padding: 1rem;
+      }
+      .title {
+        font-size: 2rem;
       }
     `}</style>
   </nav>

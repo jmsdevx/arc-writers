@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import fetch from "isomorphic-unfetch";
 import Link from "next/link";
+import { connect } from "react-redux";
 
 const InfoLink = props => (
   <Link as={`/${props.name}`} href={`/type?name=${props.name}`}>
@@ -12,9 +13,10 @@ const Info = props => (
   <Layout>
     <h1>ArcheType Info</h1>
     <div className="container">
-      {props.data.types.map((e, i) => (
-        <InfoLink key={e.archetype_id} name={e.name} />
-      ))}
+      {props.data.types &&
+        props.data.types.map((e, i) => (
+          <InfoLink key={e.archetype_id} name={e.name} />
+        ))}
     </div>
     <style jsx>{`
       .container {
@@ -37,4 +39,4 @@ Info.getInitialProps = async function() {
   };
 };
 
-export default Info;
+export default connect(state => state)(Info);

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { createLogger } from "redux-logger";
 import reducer from "../redux/reducer";
 
+//customize redux-logger options
 const logger = createLogger({
   duration: true,
   timestamp: true,
@@ -11,6 +12,8 @@ const logger = createLogger({
 
 const middlewares = applyMiddleware(thunk, logger);
 
-const store = createStore(reducer, middlewares);
+const makeStore = ({ data: {} }) => {
+  createStore(reducer, initialState, middlewares);
+};
 
-export default store;
+export default makeStore;

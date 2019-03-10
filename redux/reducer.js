@@ -1,4 +1,8 @@
-const reducer = (state = { data: {} }, action) => {
+const initialState = {
+  data: {}
+};
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
