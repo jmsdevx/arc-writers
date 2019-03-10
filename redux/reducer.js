@@ -4,6 +4,11 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case "GET":
+      return {
+        ...state,
+        ...action.payload
+      };
     default:
       return state;
   }

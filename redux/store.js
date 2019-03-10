@@ -6,13 +6,13 @@ import reducer from "../redux/reducer";
 //customize redux-logger options
 const logger = createLogger({
   duration: true,
-  timestamp: true,
+  timestamp: true, 
   diff: true
 });
 
 const middlewares = applyMiddleware(thunk, logger);
 
-const makeStore = ({ data: {} }) => {
+const makeStore = (initialState, options) => {
   createStore(reducer, initialState, middlewares);
 };
 

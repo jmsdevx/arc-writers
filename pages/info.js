@@ -29,14 +29,14 @@ const Info = props => (
   </Layout>
 );
 
-Info.getInitialProps = async function() {
-  const res = await fetch("http://arcapi.org/api/types");
-  const data = await res.json();
-  console.log(data);
-
-  return {
-    data: data
-  };
+Info.getInitialProps = async function({ store }) {
+  // const res = await fetch("http://arcapi.org/api/types");
+  // const data = await res.json();
+  // console.log(data);
+  // return {
+  //   data: data
+  // };
+  store.dispatch({ type: "GET", payload: { stuff: "data" } });
 };
 
 export default connect(state => state)(Info);
