@@ -14,11 +14,6 @@ const Info = props => (
   <Layout>
     <h1>ArcheType Info</h1>
     <div className="container">
-      {/* {props.data.types &&
-        props.data.types.map((e, i) => (
-          <InfoLink key={e.archetype_id} name={e.name} />
-        ))} */}
-
       {props.pending ? (
         <h1>Loading!</h1>
       ) : (
@@ -39,13 +34,6 @@ const Info = props => (
 );
 
 Info.getInitialProps = async function({ store }) {
-  // const res = await fetch("http://arcapi.org/api/types");
-  // const data = await res.json();
-  // console.log(data);
-  // return {
-  //   data: data
-  // };
-  // store.dispatch({ type: "GET", payload: { stuff: "data" } });
   store.dispatch(makeRequest());
 };
 

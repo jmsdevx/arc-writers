@@ -3,7 +3,6 @@ const requestPending = () => {
 };
 
 const requestFulfilled = response => {
-  console.log(response);
   return {
     type: "REQUEST_FULFILLED",
     payload: response.types,
@@ -19,8 +18,16 @@ const requestRejected = () => {
   };
 };
 
+const getTypeInfo = type => {
+  return {
+    type: "GET_TYPE_INFO",
+    payload: type
+  };
+};
+
 module.exports = {
   requestPending,
   requestFulfilled,
-  requestRejected
+  requestRejected,
+  getTypeInfo
 };

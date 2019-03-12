@@ -56,7 +56,7 @@ const Nav = props => (
         justify-content: space-between;
       }
       nav > ul {
-        padding: 1rem;
+        padding: 0.5rem;
       }
       li {
         display: flex;
