@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { makeRequest } from "../redux/async";
 
 const InfoLink = props => (
-  <Link as={`/${props.name}`} href={`/type?name=${props.name}`}>
+  <Link as={`/i/${props.name}`} href={`/type?name=${props.name}`}>
     <a>{props.name}</a>
   </Link>
 );

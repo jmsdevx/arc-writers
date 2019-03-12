@@ -17,7 +17,7 @@ const Nav = props => (
         <Link href="/quiz">
           <a>Quiz</a>
         </Link>
-        <Link href="/info">
+        <Link href="/info" prefetch>
           <a>Info</a>
         </Link>
         <Link href="/tool">

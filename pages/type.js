@@ -8,7 +8,9 @@ const Type = props => (
   <Layout>
     <div>
       <Link href="/info">
-        <a>Back to info</a>
+        <button>
+          <a>Back to info</a>
+        </button>
       </Link>
       <div className="container">
         <h2>Name</h2> <p>{props.router.query.name}</p>
@@ -21,10 +23,18 @@ const Type = props => (
       </div>
     </div>
     <style jsx>{`
-      a {
+      button {
         z-index: 2;
-        margin-right: 50rem;
         font-size: 1.5rem;
+        position: relative;
+        cursor: pointer;
+        border-radius: 9999em;
+        background: #067df7;
+        color: white;
+      }
+      button:hover {
+        background: white;
+        color: #067df7;
       }
       .container {
         position: absolute;
@@ -32,7 +42,7 @@ const Type = props => (
         flex-direction: column;
         justify-content: flex-start;
         width: 100vw;
-        padding-top: 3rem;
+        padding-top: 1rem;
         z-index: 1;
       }
       .container > h2 {
