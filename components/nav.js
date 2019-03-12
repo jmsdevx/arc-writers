@@ -45,6 +45,7 @@ const Nav = props => (
     <style jsx>{`
       :global(body) {
         margin: 0;
+        padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
       }

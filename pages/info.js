@@ -12,7 +12,7 @@ const InfoLink = props => (
 
 const Info = props => (
   <Layout>
-    <h1>ArcheType Info</h1>
+    <h1>All The Types</h1>
     <div className="container">
       {props.pending ? (
         <h1>Loading!</h1>
